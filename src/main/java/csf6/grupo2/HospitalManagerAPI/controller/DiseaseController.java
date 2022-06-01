@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/disease")
@@ -14,14 +15,19 @@ public class DiseaseController {
     @Autowired
     private DiseaseService diseaseService;
 
+    @PostMapping("/add")
+    public String addDisease(@RequestBody Disease disease) {
+        diseaseService.saveDisease(disease);
+        return "Disease added!";
+    }
+
     @GetMapping("/getAll")
-    public List<Disease> List() {
+    public List<Disease> listDisease() {
         return diseaseService.getAllDiseases();
     }
 
-    @PostMapping("/add")
-    public String add(@RequestBody Disease disease) {
-        diseaseService.saveDisease(disease);
-        return "New disease added!";
+    @GetMapping("/find")
+    public Optional<Disease> findDisease(Integer id) {
+        return diseaseService.findDisease(id);
     }
 }

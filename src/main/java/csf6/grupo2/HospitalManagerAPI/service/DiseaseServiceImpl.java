@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DiseaseServiceImpl implements DiseaseService {
@@ -13,12 +14,17 @@ public class DiseaseServiceImpl implements DiseaseService {
     private DiseaseRepository diseaseRepository;
 
     @Override
+    public Disease saveDisease(Disease disease) {
+        return diseaseRepository.save(disease);
+    }
+
+    @Override
     public List<Disease> getAllDiseases() {
         return diseaseRepository.findAll();
     }
 
     @Override
-    public Disease saveDisease(Disease disease) {
-        return diseaseRepository.save(disease);
+    public Optional<Disease> findDisease(Integer id) {
+        return diseaseRepository.findById(id);
     }
 }
