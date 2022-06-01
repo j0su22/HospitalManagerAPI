@@ -30,4 +30,10 @@ public class HospitalController {
     public Optional<Hospital> findHospital(Integer id) {
         return hospitalService.findHospital(id);
     }
+
+    @PutMapping("/update")
+    public String updateHospital(@RequestBody Hospital hospital) {
+        hospitalService.saveHospital(hospital);
+        return "Hospital updated!";
+    }
 }

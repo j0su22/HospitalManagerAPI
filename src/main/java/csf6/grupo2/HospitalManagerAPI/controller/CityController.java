@@ -30,4 +30,10 @@ public class CityController {
     public Optional<City> findCity(Integer id) {
         return cityService.findCities(id);
     }
+
+    @PutMapping("/update")
+    public String updateCity(@RequestBody City city) {
+        cityService.updateCity(city);
+        return "City updated!";
+    }
 }

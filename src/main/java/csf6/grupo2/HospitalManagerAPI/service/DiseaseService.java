@@ -11,4 +11,10 @@ public interface DiseaseService {
     List<Disease> getAllDiseases();
 
     Optional<Disease> findDisease(Integer id);
+
+    Disease updateDisease(Disease disease);
+
+    Boolean deleteDisease(Integer id);
+
+    Disease disableDisease(Disease disease);
 }

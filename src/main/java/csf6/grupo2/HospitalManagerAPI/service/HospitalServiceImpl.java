@@ -27,4 +27,15 @@ public class HospitalServiceImpl implements HospitalService {
     public Optional<Hospital> findHospital(Integer id) {
         return hospitalRepository.findById(id);
     }
+
+    @Override
+    public Hospital updateHospital(Hospital hospital) {
+        return hospitalRepository.save(hospital);
+    }
+
+    @Override
+    public Boolean deleteHospital(Integer id) {
+        hospitalRepository.deleteById(id);
+        return true;
+    }
 }

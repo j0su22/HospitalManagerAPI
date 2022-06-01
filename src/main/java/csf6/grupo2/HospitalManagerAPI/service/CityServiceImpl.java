@@ -28,4 +28,15 @@ public class CityServiceImpl implements CityService {
     public Optional<City> findCities(Integer id) {
         return cityRepository.findById(id);
     }
+
+    @Override
+    public City updateCity(City city) {
+        return cityRepository.save(city);
+    }
+
+    @Override
+    public Boolean deleteCity(Integer id) {
+        cityRepository.deleteById(id);
+        return true;
+    }
 }
