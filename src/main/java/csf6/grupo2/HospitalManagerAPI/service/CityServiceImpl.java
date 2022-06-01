@@ -25,7 +25,7 @@ public class CityServiceImpl implements CityService {
     }
 
     @Override
-    public Optional<City> findCities(Integer id) {
+    public Optional<City> findCity(Integer id) {
         return cityRepository.findById(id);
     }
 

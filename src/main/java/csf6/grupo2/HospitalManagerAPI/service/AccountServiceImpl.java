@@ -27,4 +27,20 @@ public class AccountServiceImpl implements AccountService {
     public Optional<Account> findAccount(Integer id) {
         return accountRepository.findById(id);
     }
+
+    @Override
+    public Account updateAccount(Account account) {
+        return accountRepository.save(account);
+    }
+
+    @Override
+    public boolean deleteAccount(Integer id) {
+        accountRepository.deleteById(id);
+        return true;
+    }
+
+    @Override
+    public Account disableAccount(Account account) {
+        return accountRepository.save(account);
+    }
 }

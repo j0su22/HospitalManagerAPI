@@ -27,4 +27,15 @@ public class AilmentServiceImpl implements AilmentService {
     public Optional<Ailment> findAilment(Integer id) {
         return ailmentRepository.findById(id);
     }
+
+    @Override
+    public Ailment updateAilment(Ailment ailment) {
+        return ailmentRepository.save(ailment);
+    }
+
+    @Override
+    public boolean deleteAilment(Integer id) {
+        ailmentRepository.deleteById(id);
+        return true;
+    }
 }

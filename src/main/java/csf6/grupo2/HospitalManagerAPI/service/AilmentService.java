@@ -11,4 +11,8 @@ public interface AilmentService {
     Ailment saveAilment(Ailment ailment);
 
     Optional<Ailment> findAilment(Integer id);
+
+    Ailment updateAilment(Ailment ailment);
+
+    boolean deleteAilment(Integer id);
 }

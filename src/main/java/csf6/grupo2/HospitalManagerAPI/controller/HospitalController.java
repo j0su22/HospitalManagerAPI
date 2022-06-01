@@ -33,7 +33,7 @@ public class HospitalController {
 
     @PutMapping("/update")
     public String updateHospital(@RequestBody Hospital hospital) {
-        hospitalService.saveHospital(hospital);
+        hospitalService.updateHospital(hospital);
         return "Hospital updated!";
     }
 }

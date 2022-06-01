@@ -28,7 +28,7 @@ public class CityController {
 
     @GetMapping("/find")
     public Optional<City> findCity(Integer id) {
-        return cityService.findCities(id);
+        return cityService.findCity(id);
     }
 
     @PutMapping("/update")

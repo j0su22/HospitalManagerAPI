@@ -1,6 +1,5 @@
 package csf6.grupo2.HospitalManagerAPI.controller;
 
-import csf6.grupo2.HospitalManagerAPI.model.Account;
 import csf6.grupo2.HospitalManagerAPI.model.Ailment;
 import csf6.grupo2.HospitalManagerAPI.service.AilmentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +21,7 @@ public class AilmentController {
     @PostMapping("/add")
     public String addAilment(@RequestBody Ailment ailment) {
         ailmentService.saveAilment(ailment);
-        return "new ailment added";
+        return "Ailment added";
     }
 
     @GetMapping("/find")
@@ -30,4 +29,9 @@ public class AilmentController {
         return ailmentService.findAilment(id);
     }
 
+    @PutMapping("/update")
+    public String updateAilment(@RequestBody Ailment ailment) {
+        ailmentService.updateAilment(ailment);
+        return "Ailment updated!";
+    }
 }

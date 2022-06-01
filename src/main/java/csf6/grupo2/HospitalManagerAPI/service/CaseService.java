@@ -11,4 +11,8 @@ public interface CaseService {
     Case saveCase(Case cases);
 
     Optional<Case> findCase(Integer id);
+
+    Case updateCase(Case cases);
+
+    boolean deleteCase(Integer id);
 }

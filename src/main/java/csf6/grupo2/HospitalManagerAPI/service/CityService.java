@@ -10,7 +10,7 @@ public interface CityService {
 
     List<City> getAllCities();
 
-    Optional<City> findCities(Integer id);
+    Optional<City> findCity(Integer id);
 
     City updateCity(City city);
 

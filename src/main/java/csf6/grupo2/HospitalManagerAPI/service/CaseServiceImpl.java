@@ -27,4 +27,15 @@ public class CaseServiceImpl implements CaseService{
     public Optional<Case> findCase(Integer id) {
         return caseRepository.findById(id);
     }
+
+    @Override
+    public Case updateCase(Case cases) {
+        return caseRepository.save(cases);
+    }
+
+    @Override
+    public boolean deleteCase(Integer id) {
+        caseRepository.deleteById(id);
+        return true;
+    }
 }
