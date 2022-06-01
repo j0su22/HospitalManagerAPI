@@ -23,4 +23,7 @@ public class Disease implements Serializable {
 
     @Column(name = "INHERITANCE")
     private int inheritance;
+
+    @Column(name = "STATE")
+    private int state;
 }

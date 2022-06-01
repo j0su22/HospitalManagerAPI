@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/city")
@@ -15,14 +16,18 @@ public class CityController {
     private CityService cityService;
 
     @PostMapping("/add")
-    public String add(@RequestBody City tcity) {
-        cityService.saveCity(tcity);
-        return "New city is added";
+    public String addCity(@RequestBody City city) {
+        cityService.saveCity(city);
+        return "City added";
     }
 
     @GetMapping("/getAll")
-    public List<City> list() {
+    public List<City> listCities() {
         return cityService.getAllCities();
     }
 
+    @GetMapping("/find")
+    public Optional<City> findCity(Integer id) {
+        return cityService.findCities(id);
+    }
 }
