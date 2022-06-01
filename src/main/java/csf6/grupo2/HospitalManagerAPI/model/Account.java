@@ -25,4 +25,8 @@ public class Account implements Serializable {
 
     @Column(name = "ISADMIN")
     private int isAdmin;
+
+    @Column(name = "STATE")
+    private int state;
+
 }
