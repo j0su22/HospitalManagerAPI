@@ -11,7 +11,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "T_HOSPITAL", catalog = "ProyectoFinal")
+@Table(name = "T_HOSPITAL")
 public class Hospital implements Serializable {
 
     @Id

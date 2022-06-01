@@ -11,7 +11,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "T_CASE", catalog = "ProyectoFinal")
+@Table(name = "T_CASE")
 public class Case implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

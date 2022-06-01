@@ -10,7 +10,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "T_CITY", catalog = "ProyectoFinal")
+@Table(name = "T_CITY")
 public class City implements Serializable {
 
     @Id
