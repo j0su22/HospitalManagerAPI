@@ -8,10 +8,11 @@ import java.io.Serializable;
 
 @Data
 @SuperBuilder
+@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "T_HOSPITAL", catalog = "ProyectoFinal")
-public class THospital implements Serializable {
+public class Hospital implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +25,7 @@ public class THospital implements Serializable {
     @Column(name = "STREET")
     private String street;
 
-    @ManyToOne
+    @OneToMany
     @JoinColumn(name = "ID_CITY", referencedColumnName = "ID_CITY")
-    private TCity idCity;
+    private City idCity;
 }

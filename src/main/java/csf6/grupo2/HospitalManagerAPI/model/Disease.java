@@ -5,13 +5,13 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Builder
 @Data
-@NoArgsConstructor
+@Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "T_DISEASE", catalog = "ProyectoFinal")
-public class TDisease implements Serializable {
+public class Disease implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
