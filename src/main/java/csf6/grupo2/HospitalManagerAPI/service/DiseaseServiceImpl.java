@@ -27,4 +27,20 @@ public class DiseaseServiceImpl implements DiseaseService {
     public Optional<Disease> findDisease(Integer id) {
         return diseaseRepository.findById(id);
     }
+
+    @Override
+    public Disease updateDisease(Disease disease) {
+        return diseaseRepository.save(disease);
+    }
+
+    @Override
+    public Boolean deleteDisease(Integer id) {
+        diseaseRepository.deleteById(id);
+        return true;
+    }
+
+    @Override
+    public Disease disableDisease(Disease disease) {
+        return diseaseRepository.save(disease);
+    }
 }

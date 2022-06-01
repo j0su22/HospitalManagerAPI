@@ -11,4 +11,8 @@ public interface UserService {
     List<User> getAllUsers();
 
     Optional<User> findUser(Integer id);
+
+    User updateUser(User user);
+
+    boolean deleteUser(Integer id);
 }

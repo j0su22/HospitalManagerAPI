@@ -27,4 +27,15 @@ public class UserServiceImpl implements UserService {
     public Optional<User> findUser(Integer id) {
         return userRepository.findById(id);
     }
+
+    @Override
+    public User updateUser(User user) {
+        return userRepository.save(user);
+    }
+
+    @Override
+    public boolean deleteUser(Integer id) {
+        userRepository.deleteById(id);
+        return true;
+    }
 }

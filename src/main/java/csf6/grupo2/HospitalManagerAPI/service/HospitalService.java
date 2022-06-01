@@ -11,4 +11,8 @@ public interface HospitalService {
     List<Hospital> getAllHospitals();
 
     Optional<Hospital> findHospital(Integer id);
+
+    Hospital updateHospital(Hospital hospital);
+
+    Boolean deleteHospital(Integer id);
 }

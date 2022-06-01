@@ -30,4 +30,10 @@ public class UserController {
     public Optional<User> findUser(Integer id) {
         return userService.findUser(id);
     }
+
+    @PutMapping("/update")
+    public String updateUser(@RequestBody User user) {
+        userService.updateUser(user);
+        return "User updated!";
+    }
 }

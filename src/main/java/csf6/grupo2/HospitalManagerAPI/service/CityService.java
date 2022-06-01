@@ -11,4 +11,8 @@ public interface CityService {
     List<City> getAllCities();
 
     Optional<City> findCities(Integer id);
+
+    City updateCity(City city);
+
+    Boolean deleteCity(Integer id);
 }

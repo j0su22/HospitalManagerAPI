@@ -30,4 +30,16 @@ public class DiseaseController {
     public Optional<Disease> findDisease(Integer id) {
         return diseaseService.findDisease(id);
     }
+
+    @PutMapping("/update")
+    public String updateDiasease(@RequestBody Disease disease) {
+        diseaseService.updateDisease(disease);
+        return "Disease updated!";
+    }
+
+    @PutMapping("/disable")
+    public String disableDisease(@RequestBody Disease disease) {
+        diseaseService.disableDisease(disease);
+        return "Disease disable!";
+    }
 }
