@@ -18,15 +18,15 @@ public class Case implements Serializable{
     @Column(name = "ID_CASE")
     private int idCase;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "ID_DISEASE", referencedColumnName = "ID_DISEASE")
-    private Account idDisease;
+    private Disease idDisease;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "ID_ACCOUNT", referencedColumnName = "ID_ACCOUNT")
     private Account idAccount;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "ID_HOSPITAL", referencedColumnName = "ID_HOSPITAL")
-    private Account idHospital;
+    private Hospital idHospital;
 }

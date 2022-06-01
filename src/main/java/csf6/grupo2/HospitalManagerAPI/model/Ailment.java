@@ -32,7 +32,7 @@ public class Ailment implements Serializable {
     @Column(name = "DIABETIC")
     private int diabetic;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "ID_USER", referencedColumnName = "ID_USER")
     private User idUser;
 }

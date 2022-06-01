@@ -25,7 +25,7 @@ public class Hospital implements Serializable {
     @Column(name = "STREET")
     private String street;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "ID_CITY", referencedColumnName = "ID_CITY")
     private City idCity;
 }
