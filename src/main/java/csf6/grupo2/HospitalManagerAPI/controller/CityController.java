@@ -21,8 +21,8 @@ public class CityController {
     }
 
     @GetMapping("/getAll")
-    public List<City> findAllCity (){
-        return cityService.findAll();
+    public List<City> list() {
+        return cityService.getAllCities();
     }
 
 }

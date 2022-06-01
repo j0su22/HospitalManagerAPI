@@ -7,5 +7,5 @@ import java.util.List;
 public interface CityService {
     City saveCity(City city);
 
-    List<City> findAll();
+    List<City> getAllCities();
 }
