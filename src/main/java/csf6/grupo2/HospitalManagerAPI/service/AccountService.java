@@ -16,5 +16,7 @@ public interface AccountService {
 
     boolean deleteAccount(Integer id);
 
-    Account disableAccount(Account account);
+    Account disableAccount(Integer id);
+
+    Account enableAccount(Integer id);
 }

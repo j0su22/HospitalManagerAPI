@@ -16,5 +16,7 @@ public interface DiseaseService {
 
     Boolean deleteDisease(Integer id);
 
-    Disease disableDisease(Disease disease);
+    Disease disableDisease(Integer id);
+
+    Disease enableDisease(Integer id);
 }

@@ -40,7 +40,34 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public Account disableAccount(Account account) {
-        return accountRepository.save(account);
+    public Account disableAccount(Integer id) {
+        Optional<Account> account = accountRepository.findById(id);
+
+        Account acc = new Account();
+        acc.setIdAccount(account.get().getIdAccount());
+        acc.setUsername((account.get().getUsername()));
+        acc.setPassword(account.get().getPassword());
+        acc.setIsAdmin(account.get().getIsAdmin());
+        acc.setState(0);
+
+        accountRepository.save(acc);
+
+        return acc;
+    }
+
+    @Override
+    public Account enableAccount(Integer id) {
+        Optional<Account> account = accountRepository.findById(id);
+
+        Account acc = new Account();
+        acc.setIdAccount(account.get().getIdAccount());
+        acc.setUsername((account.get().getUsername()));
+        acc.setPassword(account.get().getPassword());
+        acc.setIsAdmin(account.get().getIsAdmin());
+        acc.setState(1);
+
+        accountRepository.save(acc);
+
+        return acc;
     }
 }

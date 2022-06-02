@@ -35,9 +35,15 @@ public class AccountController {
         return "Account updated!";
     }
 
-    @PutMapping("/disable")
-    public String disableAccount(@RequestBody Account account) {
-        accountService.disableAccount(account);
+    @PostMapping("/disable")
+    public String disableAccount(Integer id) {
+        accountService.disableAccount(id);
         return "Account disable!";
+    }
+
+    @PostMapping("/enable")
+    public String enableAccount(Integer id) {
+        accountService.enableAccount(id);
+        return "Account enable!";
     }
 }

@@ -40,7 +40,32 @@ public class DiseaseServiceImpl implements DiseaseService {
     }
 
     @Override
-    public Disease disableDisease(Disease disease) {
-        return diseaseRepository.save(disease);
+    public Disease disableDisease(Integer id) {
+        Optional<Disease> disease = diseaseRepository.findById(id);
+
+        Disease ds = new Disease();
+        ds.setIdDisease(disease.get().getIdDisease());
+        ds.setName((disease.get().getName()));
+        ds.setInheritance(disease.get().getInheritance());
+        ds.setState(0);
+
+        diseaseRepository.save(ds);
+
+        return ds;
+    }
+
+    @Override
+    public Disease enableDisease(Integer id) {
+        Optional<Disease> disease = diseaseRepository.findById(id);
+
+        Disease ds = new Disease();
+        ds.setIdDisease(disease.get().getIdDisease());
+        ds.setName((disease.get().getName()));
+        ds.setInheritance(disease.get().getInheritance());
+        ds.setState(1);
+
+        diseaseRepository.save(ds);
+
+        return ds;
     }
 }

@@ -37,9 +37,15 @@ public class DiseaseController {
         return "Disease updated!";
     }
 
-    @PutMapping("/disable")
-    public String disableDisease(@RequestBody Disease disease) {
-        diseaseService.disableDisease(disease);
+    @PostMapping("/disable")
+    public String disableDisease(Integer id) {
+        diseaseService.disableDisease(id);
         return "Disease disable!";
+    }
+
+    @PostMapping("/enable")
+    public String enableDisease(Integer id) {
+        diseaseService.enableDisease(id);
+        return "Disease enable!";
     }
 }
