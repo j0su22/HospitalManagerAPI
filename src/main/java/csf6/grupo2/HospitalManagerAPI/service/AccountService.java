@@ -8,7 +8,8 @@ import java.util.Optional;
 public interface AccountService {
     List<Account> getAllAccounts();
 
-    Account saveAccount(Account account);
+    Account singIn(String user, String pass);
+    Account singUp(Account account);
 
     Optional<Account> findAccount(Integer id);
 

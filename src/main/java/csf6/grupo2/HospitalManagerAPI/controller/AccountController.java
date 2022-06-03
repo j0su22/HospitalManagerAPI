@@ -18,10 +18,16 @@ public class AccountController {
     @GetMapping("/getAll")
     public List<Account> List(){ return accountService.getAllAccounts(); }
 
-    @PostMapping("/add")
-    public String addAccount(@RequestBody Account account) {
-        accountService.saveAccount(account);
-        return "new account added";
+    @PostMapping("/singIn")
+    public String singIn(String user, String pass) {
+        accountService.singIn(user, pass);
+        return "Welcome!";
+    }
+
+    @PostMapping("/singUp")
+    public String singUp(@RequestBody Account account) {
+        accountService.singUp(account);
+        return "Account added";
     }
 
     @GetMapping("/find")

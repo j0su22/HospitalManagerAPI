@@ -3,8 +3,11 @@ package csf6.grupo2.HospitalManagerAPI.service;
 import csf6.grupo2.HospitalManagerAPI.model.Account;
 import csf6.grupo2.HospitalManagerAPI.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
+import csf6.grupo2.HospitalManagerAPI.security.BCrypt;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,7 +22,15 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public Account saveAccount(Account account) {
+    public Account singIn(String user, String pass) {
+
+
+        return null;
+    }
+
+    @Override
+    public Account singUp(Account account) {
+        account.setPassword(BCrypt.hashpw(account.getPassword(), BCrypt.gensalt()));
         return accountRepository.save(account);
     }
 
