@@ -25,7 +25,7 @@ public class AccountController {
     }
 
     @GetMapping("/find")
-    public Optional<Account> findDisease(Integer id) {
+    public Optional<Account> findAccount(Integer id) {
         return accountService.findAccount(id);
     }
 
