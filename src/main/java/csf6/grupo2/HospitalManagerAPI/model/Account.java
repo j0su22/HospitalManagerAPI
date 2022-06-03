@@ -1,5 +1,6 @@
 package csf6.grupo2.HospitalManagerAPI.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -20,6 +21,7 @@ public class Account implements Serializable {
     @Column(name = "USERNAME")
     private String username;
 
+    @JsonIgnore
     @Column(name = "PASSWORD")
     private String password;
 
